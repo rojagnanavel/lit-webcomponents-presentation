@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<section>
+						<h2>About me</h2>
+					</section>
+					<section>
+						Hi, I’m Roja
+					</section>
+					<section>
+						Senior Frontend Developer at Wipro
+					</section>
+					<section>
+						I’ve had the privilege of working with clients like Apple, SCB, Multichoice, Vodafone-Ziggo, and Comcast.
+					</section>
+					<section>
+						Mantra for Life: "It's never too late to start, learn, and grow on what you love."
+					</section>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<h2>Lit & Web Components: Build Once, Integrate Anywhere</h2>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>
+								Why Did I Choose This Topic?
+							</li>
+							<li>
+								What is a Component?
+							</li>
+							<li>
+								Challenges with Web Components
+							</li>
+							<li>
+								Why Do We Need to Choose Lit?
+							</li>
+							<li>
+								Demo: Integrating Lit with React and Angular
+							</li>
+							<li>
+								Q&A
+							</li>
+						</ul>
+					</section>
+					<section>
+						Sharing My Journey in the Industry – Reflecting on the experiences and challenges I’ve faced over the years.
+					</section>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<p>Why Did I Choose This Topic?</p>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<section><p>What is a Component?</p></section>
+					<section><p>Web Components are a set of web platform APIs that allow developers to create custom, reusable, and encapsulated HTML tags. </p></section>
+					<section>
+						<p>Web Components consist of three main technologies:</p>
+						<ul>
+							<li>
+								Custom Elements
+							</li>
+							<li>
+								Shadow DOM
+							</li>
+							<li>
+								HTML Templates
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p>Advantages of Web Components:</p>
+						<ul>
+							<li>
+								Encapsulation
+							</li>
+							<li>
+								Framework-Agnostic
+							</li>
+							<li>
+								Reusability
+							</li>
+							<li>
+								Native Browser Support
+							</li>
+						</ul>
+					</section>
+					<section>
+						<pre>
+							<code>
+								// user-profile.js
+
+								// Define a custom element named 'user-profile'
+								class UserProfile extends HTMLElement {
+								// Constructor to initialize the component
+								constructor() {
+									super(); // Call the superclass constructor
+									this.attachShadow({ mode: 'open' }); // Attach a shadow DOM
+								}
+
+								// Called when the element is added to the DOM
+								connectedCallback() {
+									this.render();
+								}
+
+								// Render the HTML content for the component
+								render() {
+									// Get properties passed to the component
+									const name = this.getAttribute('name') || 'Guest';
+									const bio = this.getAttribute('bio') || 'No bio available.';
+
+									// Define the HTML template for the component
+									this.shadowRoot.innerHTML = `
+									<style>
+										h2 {
+										color: #4CAF50;
+										}
+										p {
+										font-style: italic;
+										}
+									</style>
+									<div>
+										<h2>${name}</h2>
+										<p>${bio}</p>
+									</div>
+									`;
+								}
+								}
+
+								// Define the custom element
+								customElements.define('user-profile', UserProfile);
+
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code>
+								<!-- index.html -->
+								<!DOCTYPE html>
+								<html lang="en">
+								<head>
+								<meta charset="UTF-8">
+								<meta name="viewport" content="width=device-width, initial-scale=1.0">
+								<title>Web Component Example</title>
+								<script src="user-profile.js" defer></script> <!-- Load the Web Component -->
+								</head>
+								<body>
+								<h1>Welcome to the Web Component Demo</h1>
+
+								<!-- Use the custom <user-profile> component -->
+								<user-profile name="John Doe" bio="Software Engineer at XYZ"></user-profile>
+								<user-profile name="Alice Smith" bio="Designer"></user-profile>
+								<user-profile></user-profile> <!-- Default profile with no attributes -->
+								</body>
+								</html>
+							</code>
+						</pre>
+					</section>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<p>Challenges with Web Components<p>
+					<ul>
+						<li>
+							Complexity of Boilerplate Code
+						</li>
+						<li>
+							Integration with Frameworks
+						</li>
+						<li>
+							Styling and Reusability
+						</li>
+						<li>
+							Performance Issues
+						</li>
+					</ul>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<section>
+						<p>Why Do We Need to Choose Lit?</p>
+						<ul>
+							<li>
+								Lightweight and Efficient
+							</li>
+							<li>
+								Easy to Learn and Use
+							</li>
+							<li>
+								Framework Agnostic
+							</li>
+							<li>
+								Built-in Features
+							</li>
+							<li>
+								Scalable and Reusable Components
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p>History of Lit</p>
+					</section>
+					<section>
+						<li>
+							Origins - Lit was developed by Google
+						</li>
+					</section>
+					<section>
+						<li>
+							Purpose - The main goal behind Lit’s creation was to simplify the process of building lightweight, reusable, and high-performance Web Components using web standards like HTML, CSS, and JavaScript
+						</li>
+					</section>
+					<section>
+						<li>
+							Focus on Performance -
+Lit was designed to offer a minimal library that focuses on fast rendering and small file sizes, unlike larger frameworks like React or Angular. It makes the most of modern browser capabilities to ensure efficient performance.
+						</li>
+					</section>
+					<section>
+						<li>
+							Evolution to Lit -
+In 2021, LitElement was merged with LitHtml (another library from Google) to form Lit. The unified library provided a simpler and more cohesive API, combining the power of reactive data-binding and efficient rendering.
+						</li>
+					</section>
+					<section>
+						<li>
+							Community Growth -
+Lit was developed and is maintained by Google, but it has since gained an active open-source community. It continues to evolve with contributions from developers worldwide.
+						</li>
+					</section>
+					<section>
+						<li>
+							Current Status -
+Today, Lit is one of the leading libraries for building Web Components, used in various web applications, design systems, and custom UI elements.
+						</li>
+					</section>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<p>Demo: Integrating Lit with React and Angular</p>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<div>Refernce:<div></div>
+					<a href="https://lit.dev/">https://lit.dev/</a>
+					<a href=" https://vite.dev/guide//">https://vite.dev/guide/</a>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<h3>Q&A</h3>
+				</section>
+				<section data-background-gradient="linear-gradient(to bottom, #9b4d96, #ff6db6)">
+					<h3>Thank You!</h3>
+					<p style="font-size:100px">&#128515;</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			
+		</script>
+	</body>
+</html>
